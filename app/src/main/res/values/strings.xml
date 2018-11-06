@@ -13,4 +13,5 @@
     <string name="tv7">07</string>
     <string name="tv8">08</string>
     <string name="tv9">09</string>
+    <string name="colon"> : </string>
 </resources>

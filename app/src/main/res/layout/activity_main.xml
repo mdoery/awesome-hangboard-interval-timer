@@ -39,93 +39,53 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="horizontal"
-            android:layout_weight="0.5"
+            android:layout_weight="0.33"
             tools:layout_editor_absoluteY="8dp"
             tools:layout_editor_absoluteX="8dp"
             android:background="@drawable/ll_border">
-            <ScrollView
-                android:layout_width="200dp"
+            <!-- LinearLayout contains the scroller for minutes. Use gravity RIGHT to push scroller
+            towards colon -->
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:scrollY="26sp"
-                android:scrollbars="none"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_weight="0.30">
+                <!-- scroller for minutes -->
+                <include layout="@layout/duration_scroller"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:id="@+id/duration_minutes"
+                />
+            </LinearLayout>
+            <!-- the colon between minutes and seconds -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="0.10">
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <TextView
-                        android:id="@+id/tv0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv0"/>
-                    <TextView
-                        android:id="@+id/tv1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv1"/>
-                    <TextView
-                        android:id="@+id/tv2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv2"/>
-                    <TextView
-                        android:id="@+id/tv3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv3"/>
-                    <TextView
-                        android:id="@+id/tv4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv4"/>
-                    <TextView
-                        android:id="@+id/tv5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv5"/>
-                    <TextView
-                        android:id="@+id/tv6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv6"/>
-                    <TextView
-                        android:id="@+id/tv7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv7"/>
-                    <TextView
-                        android:id="@+id/tv8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv8"/>
-                    <TextView
-                        android:id="@+id/tv9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="44sp"
-                        android:includeFontPadding="false"
-                        android:text="@string/tv9"/>
-                </LinearLayout>
-            </ScrollView>
+                    android:textSize="44sp"
+                    android:gravity="center"
+                    android:text="@string/colon"/>
+            </LinearLayout>
+            <!-- LinearLayout contains the scroller for seconds. Use gravity LEFT to push scroller
+            towards colon -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_weight="0.30">
+                <!-- scroller for seconds -->
+                <include layout="@layout/duration_scroller"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:id="@+id/duration_seconds"/>
+            </LinearLayout>
         </LinearLayout>
         <!-- Similar to topPanel, bottomPanel occupies the bottom 25% of the view -->
         <LinearLayout
